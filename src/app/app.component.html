@@ -84,9 +84,7 @@
         <img src="assets/images/macaroons/big-macaroon.png" alt="big macaroon" class="macaroons__image-size">
       </div>
     </div>
-    <div class="macaroons__advantages">
-      <advantage-component *ngFor="let item of advantages; let i = index" [advantage]="item" [index]="i"></advantage-component>
-    </div>
+    <advantages-component></advantages-component>
   </div>
 </section>
 
@@ -94,19 +92,8 @@
   <div class="container">
     <h4 class="products__head" id="macaroon">Выберите свой макарун</h4>
     <div class="products__items">
-      <div *ngFor="let item of products; let i = index" class="products__item">
-        <div class="products__item-image">
-          <img [src]="'assets/images/products/' + item.image" alt="Macaroon{{i+1}}">
-        </div>
-        <p class="products__item-title">{{ item.title }}</p>
-        <div class="products__item-select">
-          <div class="products__item-list">
-            <div class="products__item-quantity">{{ item.quantity }} шт.</div>
-            <div class="products__item-price">{{ item.price }} руб</div>
-          </div>
-          <button class="btn products__btn" (click)="productChoice(item, orderElement)">{{ item.order }}</button>
-        </div>
-      </div>
+      <product-component *ngFor="let item of products; let i = index" [product]="item" [index]="i"
+                         (addToCartEvent)="addToCart(item, orderElement)"></product-component>
     </div>
   </div>
 </section>

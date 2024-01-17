@@ -74,15 +74,6 @@
   line-height: 1.389;
 }
 
-.btn {
-  font-family: Gilroy-Bold, sans-serif;
-  color: rgb(255, 255, 255);
-  background-image: linear-gradient(0deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: .2s linear;
-}
-
 .main__btn {
   font-size: 18px;
   border-radius: 30px;
@@ -90,10 +81,6 @@
   width: 240px;
   position: relative;
   z-index: 10;
-}
-
-.btn:hover {
-  box-shadow: 0 5px 9px 1px rgba(130, 19, 40, 0.5);
 }
 
 .main__image {
@@ -144,13 +131,6 @@
   justify-self: end;
 }
 
-.macaroons__advantages {
-  padding-top: 44px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 86px;
-}
-
 .products {
   padding: 120px 0;
   background-color: #eba8b1;
@@ -168,61 +148,6 @@
   display: grid;
   grid-template-columns: repeat(4, 263px);
   column-gap: 29px;
-}
-
-.products__item {
-  border: 2px solid white;
-  border-radius: 20px;
-  padding: 0 19px 25px 19px;
-  box-sizing: border-box;
-}
-
-.products__item-image {
-  position: relative;
-  top: -62px;
-  margin-bottom: -22px;
-  width: 195px;
-  height: 124px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: .4s linear;
-}
-
-.products__item:hover .products__item-image {
-  transform: scale(1.1);
-}
-
-.products__item-title {
-  font-size: 18px;
-  font-family: Tavolga, sans-serif;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  margin-bottom: 26px;
-  vertical-align: middle;
-}
-
-.products__item-select {
-  display: flex;
-  justify-content: space-between;
-}
-
-.products__item-list {
-  font-size: 15px;
-  font-family: Gilroy-Regular, sans-serif;
-  color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.products__btn {
-  font-size: 16px;
-  border-radius: 25px;
-  width: 130px;
-  padding: 18px 18px 19px 18px;
 }
 
 .order {
@@ -625,15 +550,6 @@
     justify-self: center;
   }
 
-  .macaroons__advantages {
-    grid-template-columns: repeat(2, 221px);
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    text-align: center;
-    grid-column-gap: 54px;
-    grid-row-gap: 80px;
-  }
-
   .products__items {
     grid-template-columns: repeat(2, 263px);
     grid-template-rows: repeat(2, 1fr);
@@ -949,12 +865,6 @@
 
   .order__strawberry-big {
     width: 72px;
-  }
-
-  .macaroons__advantages {
-    grid-column-gap: 19px;
-    grid-row-gap: 36px;
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer {

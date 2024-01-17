@@ -1,3 +1,10 @@
+.macaroons__advantages {
+  padding-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 86px;
+}
+
 .macaroons__advantage-number {
   width: 70px;
   height: 70px;
@@ -38,6 +45,15 @@
 
 
 @media screen and (max-width: 1096px) {
+  .macaroons__advantages {
+    grid-template-columns: repeat(2, 221px);
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+    grid-column-gap: 54px;
+    grid-row-gap: 80px;
+  }
+
   .macaroons__advantage-number {
     margin-left: auto;
     margin-right: auto;
@@ -45,6 +61,12 @@
 }
 
 @media screen and (max-width: 510px) {
+  .macaroons__advantages {
+    grid-column-gap: 19px;
+    grid-row-gap: 36px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .macaroons__advantage-text {
     font-size: 13px;
     line-height: 1.385;

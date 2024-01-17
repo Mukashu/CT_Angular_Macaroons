@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AdvantageType} from "../types/advantage.type";
 import {ProductsType} from "../types/products.type";
 import {ContactsType} from "../types/contacts.type";
 import {ProductsService} from "./services/products.service";
@@ -11,25 +10,6 @@ import {CartService} from "./services/cart.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public advantages: AdvantageType[] = [
-    {
-      title: 'Лучшие продукты',
-      text: 'Мы честно готовим макаруны только из натуральных и качественных продуктов. Мы не используем консерванты, ароматизаторы и красители.'
-    },
-    {
-      title: 'Много вкусов',
-      text: 'Наша задача – предоставить вам широкое разнобразие вкусов. Вы удивитесь, но у нас более 70 вкусов пироженок.'
-    },
-    {
-      title: 'Бисквитное тесто',
-      text: 'Все пирожные готовятся на бисквитном тесте с качественным сливочным маслом 82,5%. В составе нет маргарина и дрожжей!'
-    },
-    {
-      title: 'Честный продукт',
-      text: 'Вкус, качество и безопасность наших пирогов подтверждена декларацией о соответствии, которую мы получили 22.06.2016 г.'
-    }
-  ];
-
   public products: ProductsType[] = [];
 
   public yourChoice: string = '';
@@ -53,9 +33,10 @@ export class AppComponent implements OnInit {
     this.products = this.productsService.getProducts();
   }
 
-  productChoice(product: ProductsType, target: HTMLElement): void {
+  addToCart(product: ProductsType, target: HTMLElement): void {
     this.yourChoice = product.title.toUpperCase();
     this.scrollTo(target);
+
     this.cartService.count++;
 
     this.cartService.purchaseAmount = this.cartService.purchaseAmount.replace(/,/g, '.');
@@ -63,6 +44,8 @@ export class AppComponent implements OnInit {
 
     this.cartService.purchaseAmount = (+this.cartService.purchaseAmount + +product.price).toFixed(2).replace(/\./g, ',');
     product.price = product.price.replace(/\./g, ',');
+
+    alert(`${product.title} добавлен в корзину`);
   }
 
   scrollTo(target: HTMLElement): void {

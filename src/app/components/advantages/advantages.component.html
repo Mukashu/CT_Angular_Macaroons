@@ -1,0 +1,9 @@
+<div class="macaroons__advantages">
+  <div class="macaroons__advantage" *ngFor="let item of advantages; let i = index">
+    <div class="macaroons__advantage-number">
+      <div class="macaroons__advantage-number-bottom">{{ i + 1 }}</div>
+    </div>
+    <h4 class="macaroons__advantage-head">{{ item.title }}</h4>
+    <p class="macaroons__advantage-text">{{ item.text }}</p>
+  </div>
+</div>>

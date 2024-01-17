@@ -4,12 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {ProductsService} from "./services/products.service";
-import { AdvantageComponent } from './components/advantage/advantage.component';
+import { AdvantagesComponent } from './components/advantages/advantages.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdvantageComponent
+    AdvantagesComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
