@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AdvantageType} from "../types/advantage.type";
 import {ProductsType} from "../types/products.type";
 import {ContactsType} from "../types/contacts.type";
+import {ProductsService} from "./services/products.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public advantages: AdvantageType[] = [
     {
       title: 'Лучшие продукты',
@@ -28,36 +29,7 @@ export class AppComponent {
     }
   ];
 
-  public products: ProductsType[] = [
-    {
-      image: '1.png',
-      title: 'Макарун с малиной',
-      quantity: '1 шт.',
-      price: '1,70 руб.',
-      order: 'Заказать'
-    },
-    {
-      image: '2.png',
-      title: 'Макарун с манго',
-      quantity: '1 шт.',
-      price: '1,70 руб.',
-      order: 'Заказать'
-    },
-    {
-      image: '3.png',
-      title: 'Пирог с ванилью',
-      quantity: '1 шт.',
-      price: '1,70 руб.',
-      order: 'Заказать'
-    },
-    {
-      image: '4.png',
-      title: 'Пирог с фисташками',
-      quantity: '1 шт.',
-      price: '1,70 руб.',
-      order: 'Заказать'
-    }
-  ];
+  public products: ProductsType[] = [];
 
   public yourChoice: string = '';
   public showPresent: boolean = true;
@@ -71,6 +43,13 @@ export class AppComponent {
     text: 'Мы в инстаграм',
     link: 'https://www.instagram.com/'
   };
+
+  constructor(private productsService: ProductsService) {
+  }
+
+  ngOnInit() {
+    this.products = this.productsService.getProducts();
+  }
 
   public productChoice(product: ProductsType, target: HTMLElement): void {
     this.yourChoice = product.title.toUpperCase();
