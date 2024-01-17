@@ -3,6 +3,7 @@ import {AdvantageType} from "../types/advantage.type";
 import {ProductsType} from "../types/products.type";
 import {ContactsType} from "../types/contacts.type";
 import {ProductsService} from "./services/products.service";
+import {CartService} from "./services/cart.service";
 
 @Component({
   selector: 'app-root',
@@ -44,23 +45,31 @@ export class AppComponent implements OnInit {
     link: 'https://www.instagram.com/'
   };
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService,
+              public cartService: CartService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.products = this.productsService.getProducts();
   }
 
-  public productChoice(product: ProductsType, target: HTMLElement): void {
+  productChoice(product: ProductsType, target: HTMLElement): void {
     this.yourChoice = product.title.toUpperCase();
     this.scrollTo(target);
+    this.cartService.count++;
+
+    this.cartService.purchaseAmount = this.cartService.purchaseAmount.replace(/,/g, '.');
+    product.price = product.price.replace(/,/g, '.');
+
+    this.cartService.purchaseAmount = (+this.cartService.purchaseAmount + +product.price).toFixed(2).replace(/\./g, ',');
+    product.price = product.price.replace(/\./g, ',');
   }
 
-  public scrollTo(target: HTMLElement): void {
+  scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: 'smooth'});
   }
 
-  public changeShowPresent(): boolean {
+  changeShowPresent(): boolean {
     if (this.showPresent) {
       this.showPresent = false;
       return true;
@@ -70,7 +79,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  public burgerMenu(target: HTMLElement): void {
+  burgerMenu(target: HTMLElement): void {
     target.classList.add('open');
 
     const menuElements: NodeListOf<Element> = document.querySelectorAll('#menu *');
@@ -81,4 +90,6 @@ export class AppComponent implements OnInit {
       }
     })
   }
+
+  protected readonly CartService = CartService;
 }

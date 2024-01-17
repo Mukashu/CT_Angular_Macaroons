@@ -104,8 +104,8 @@
         <p class="products__item-title">{{item.title}}</p>
         <div class="products__item-select">
           <div class="products__item-list">
-            <div class="products__item-quantity">{{item.quantity}}</div>
-            <div class="products__item-price">{{item.price.toFixed(2)}} руб</div>
+            <div class="products__item-quantity">{{item.quantity}} шт.</div>
+            <div class="products__item-price">{{item.price}} руб</div>
           </div>
           <button class="btn products__btn" (click)="productChoice(item, orderElement)">{{item.order}}</button>
         </div>
@@ -167,10 +167,11 @@
   </div>
   <div class="present" *ngIf="showPresent">
     <div class="present__circle">
-      <img src="assets/images/present/present.png" alt="Present">
+      <img src="assets/images/present/cart.png" alt="Present">
+      <div class="present__circle-purchases">{{cartService.count}}</div>
     </div>
     <div class="present__frame">
-      <div class="present__frame-big">Оформите заказ и получите подарок!
+      <div class="present__frame-big">{{cartService.purchaseAmount}} руб.
         <div class="present__frame-small"></div>
       </div>
     </div>

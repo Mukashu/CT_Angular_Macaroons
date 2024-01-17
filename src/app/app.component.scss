@@ -430,7 +430,7 @@
   display: grid;
   grid-template-columns: 1fr 90px;
   position: fixed;
-  width: 284px;
+  width: 210px;
   height: 128px;
   bottom: -8px;
   right: 30px;
@@ -451,8 +451,29 @@
   cursor: pointer;
 }
 
+.present__circle img {
+  width: 50px;
+  height: 50px;
+}
+
 .present__circle:hover {
   box-shadow: 0 0 12.6px 2.4px rgba(130, 19, 40, 0.5);
+}
+
+.present__circle-purchases {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  color: #71081e;
+  border: 2px solid #71081e;
+  text-align: center;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 60px;
 }
 
 .present__frame {
@@ -467,7 +488,7 @@
 }
 
 .present__frame-big {
-  width: 172px;
+  width: 99px;
   height: 64px;
   border: 2px solid #770a1d;
   border-radius: 10px;
@@ -479,6 +500,7 @@
   padding: 15px 10px 14px 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   box-sizing: border-box;
 }
 
@@ -491,7 +513,7 @@
   position: absolute;
   background: #feefee;
   top: 24px;
-  left: 164px;
+  left: 92px;
 }
 
 .present:hover .present__frame {
