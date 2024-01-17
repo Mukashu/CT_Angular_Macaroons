@@ -151,44 +151,6 @@
   column-gap: 86px;
 }
 
-.macaroons__advantage-number {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background-color: rgb(130, 19, 40);
-  font-size: 60px;
-  font-family: Gilroy-Extrabold, sans-serif;
-  color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin-bottom: 13px;
-  transition: .2s linear;
-}
-
-.macaroons__advantage-number-bottom {
-  line-height: 70%;
-}
-
-.macaroons__advantage-head {
-  font-size: 20px;
-  font-family: Gilroy-Extrabold, sans-serif;
-  color: rgb(51, 25, 7);
-  margin-bottom: 20px;
-}
-
-.macaroons__advantage-text {
-  font-size: 15px;
-  font-family: Gilroy-Medium, sans-serif;
-  color: rgb(51, 25, 7);
-  line-height: 1.333;
-}
-
-.macaroons__advantage:hover .macaroons__advantage-number {
-  background-color: #eba8b1;
-  color: #821328;
-}
-
 .products {
   padding: 120px 0;
   background-color: #eba8b1;
@@ -606,10 +568,6 @@
 }
 
 @media screen and (max-width: 1154px) {
-  .container {
-    padding: 0 15px 0 15px;
-  }
-
   .main__image {
     max-width: 480px;
     margin-left: unset;
@@ -674,11 +632,6 @@
     text-align: center;
     grid-column-gap: 54px;
     grid-row-gap: 80px;
-  }
-
-  .macaroons__advantage-number {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .products__items {
@@ -789,11 +742,6 @@
 @media screen and (max-width: 768px) {
   .header__phone {
     display: none;
-  }
-
-  .container {
-    max-width: 728px;
-
   }
 
   .order__macaroons {
@@ -1006,14 +954,6 @@
   .macaroons__advantages {
     grid-column-gap: 19px;
     grid-row-gap: 36px;
-  }
-
-  .macaroons__advantage-text {
-    font-size: 13px;
-    line-height: 1.385;
-  }
-
-  .macaroons__advantages {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1121,14 +1061,6 @@
     font-size: 16px;
   }
 
-  .macaroons__advantage-head {
-    font-size: 18px;
-  }
-
-  .macaroons__advantage-text {
-    font-size: 13px;
-  }
-
   .products__head {
     font-size: 30px;
   }
@@ -1209,14 +1141,6 @@
     height: 260px;
     left: calc(14% - 12px);
     top: 367px;
-  }
-
-  .order__form {
-
-  }
-
-  .input, .order__btn {
-
   }
 }
 
