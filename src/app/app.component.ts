@@ -33,19 +33,10 @@ export class AppComponent implements OnInit {
     this.products = this.productsService.getProducts();
   }
 
-  addToCart(product: ProductsType, target: HTMLElement): void {
-    this.yourChoice = product.title.toUpperCase();
+  addToCart(productTitle: string, target: HTMLElement): void {
+    this.yourChoice = productTitle.toUpperCase();
     this.scrollTo(target);
-
-    this.cartService.count++;
-
-    this.cartService.purchaseAmount = this.cartService.purchaseAmount.replace(/,/g, '.');
-    product.price = product.price.replace(/,/g, '.');
-
-    this.cartService.purchaseAmount = (+this.cartService.purchaseAmount + +product.price).toFixed(2).replace(/\./g, ',');
-    product.price = product.price.replace(/\./g, ',');
-
-    alert(`${product.title} добавлен в корзину`);
+    alert(`${productTitle} добавлен в корзину`);
   }
 
   scrollTo(target: HTMLElement): void {

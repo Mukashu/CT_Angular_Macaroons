@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ProductsType} from "../../../types/products.type";
 import {AppComponent} from "../../app.component";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'product-component',
@@ -11,9 +12,9 @@ export class ProductComponent implements OnInit {
   @Input() product: ProductsType;
   @Input() index: number;
 
-  @Output() addToCartEvent: EventEmitter<ProductsType> = new EventEmitter<ProductsType>();
+  @Output() addToCartEvent: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
+  constructor(public cartService: CartService) {
     this.product = {
       image: '',
       title: '',
@@ -28,7 +29,15 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void { }
 
   addProductToCart(): void {
-    this.addToCartEvent.emit(this.product);
+    this.cartService.count++;
+
+    this.cartService.purchaseAmount = this.cartService.purchaseAmount.replace(/,/g, '.');
+    this.product.price = this.product.price.replace(/,/g, '.');
+
+    this.cartService.purchaseAmount = (+this.cartService.purchaseAmount + +this.product.price).toFixed(2).replace(/\./g, ',');
+    this.product.price = this.product.price.replace(/\./g, ',');
+
+    this.addToCartEvent.emit(this.product.title);
   }
 
   convertProductPrice(price: string): number {

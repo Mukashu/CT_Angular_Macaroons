@@ -96,7 +96,7 @@
     <h4 class="products__head" id="macaroon">Выберите свой макарун</h4>
     <div class="products__items">
       <product-component *ngFor="let item of products; let i = index" [product]="item" [index]="i"
-                         (addToCartEvent)="addToCart(item, orderElement)"></product-component>
+                         (addToCartEvent)="addToCart(item.title, orderElement)"></product-component>
     </div>
   </div>
 </section>
