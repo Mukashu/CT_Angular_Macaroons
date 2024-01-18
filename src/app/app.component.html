@@ -47,7 +47,7 @@
       </ul>
     </nav>
     <div class="header__phone">
-      <a [href]="phone.link" class="phone">{{ phone.text }}</a>
+      <a [href]="phone.link" class="phone">{{ phone.text | formatPhoneNumber }}</a>
     </div>
   </div>
 </header>
@@ -154,7 +154,7 @@
     </a>
 
     <div class="footer__phone">
-      <a [href]="phone.link" class="phone">{{ phone.text }}</a>
+      <a [href]="phone.link" class="phone">{{ phone.text | formatPhoneNumber }}</a>
     </div>
   </div>
   <div class="present" *ngIf="showPresent">

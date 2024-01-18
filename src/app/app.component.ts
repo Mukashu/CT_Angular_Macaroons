@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public showPresent: boolean = true;
 
   public phone: ContactsType = {
-    text: '+375 (29) 368-98-68',
+    text: '375293689868',
     link: 'tel: +375 (29) 368-98-68'
   };
 

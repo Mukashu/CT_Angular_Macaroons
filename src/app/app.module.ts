@@ -8,6 +8,7 @@ import { AdvantagesComponent } from './components/advantages/advantages.componen
 import { ProductComponent } from './components/product/product.component';
 import { AddEffectsToButtonsDirective } from './directives/add-effects-to-buttons.directive';
 import { FormatTextAdvantagesPipe } from './pipes/format-text-advantages.pipe';
+import { FormatPhoneNumberPipe } from './pipes/format-phone-number.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormatTextAdvantagesPipe } from './pipes/format-text-advantages.pipe';
     AdvantagesComponent,
     ProductComponent,
     AddEffectsToButtonsDirective,
-    FormatTextAdvantagesPipe
+    FormatTextAdvantagesPipe,
+    FormatPhoneNumberPipe
   ],
   imports: [
     BrowserModule,
