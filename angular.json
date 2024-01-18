@@ -11,6 +11,9 @@
         }
       },
       "root": "",
+      "i18n": {
+        "sourceLocale": "ru-RU"
+      },
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {

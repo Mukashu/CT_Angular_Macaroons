@@ -31,5 +31,9 @@ export class ProductComponent implements OnInit {
     this.addToCartEvent.emit(this.product);
   }
 
+  convertProductPrice(price: string): number {
+    return +price.replace(/,/g, '.');
+  }
+
   protected readonly AppComponent = AppComponent;
 }

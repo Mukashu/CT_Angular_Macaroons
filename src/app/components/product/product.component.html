@@ -6,7 +6,7 @@
   <div class="products__item-select">
     <div class="products__item-list">
       <div class="products__item-quantity">{{ product.quantity }} шт.</div>
-      <div class="products__item-price">{{ product.price }} руб</div>
+      <div class="products__item-price">{{ convertProductPrice(product.price) | currency:'BYN':'руб.' }}</div>
     </div>
     <button class="btn products__btn" addEffectsToButtons (click)="addProductToCart()">{{ product.order }}</button>
   </div>
