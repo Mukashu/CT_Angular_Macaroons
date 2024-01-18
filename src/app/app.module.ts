@@ -7,13 +7,15 @@ import {ProductsService} from "./services/products.service";
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { ProductComponent } from './components/product/product.component';
 import { AddEffectsToButtonsDirective } from './directives/add-effects-to-buttons.directive';
+import { FormatTextAdvantagesPipe } from './pipes/format-text-advantages.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdvantagesComponent,
     ProductComponent,
-    AddEffectsToButtonsDirective
+    AddEffectsToButtonsDirective,
+    FormatTextAdvantagesPipe
   ],
   imports: [
     BrowserModule,
