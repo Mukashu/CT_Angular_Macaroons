@@ -6,12 +6,14 @@ import {FormsModule} from "@angular/forms";
 import {ProductsService} from "./services/products.service";
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { ProductComponent } from './components/product/product.component';
+import { AddEffectsToButtonsDirective } from './directives/add-effects-to-buttons.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdvantagesComponent,
-    ProductComponent
+    ProductComponent,
+    AddEffectsToButtonsDirective
   ],
   imports: [
     BrowserModule,

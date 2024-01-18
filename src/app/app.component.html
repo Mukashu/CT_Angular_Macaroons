@@ -58,7 +58,10 @@
       <h1 class="main__info-head">Мягкие французские пироженки Macaroons</h1>
       <p class="main__info-text">Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками
         Macaroon!</p>
-      <button class="btn main__btn" (click)="scrollTo(productsElement)">Выбрать макарун</button>
+      <button class="btn main__btn" addEffectsToButtons
+              [defaultBgColor]="'rgba(130, 19, 40, 0.5)'"
+              [hoverBgColor]="'rgb(130, 19, 40)'"
+              (click)="scrollTo(productsElement)">Выбрать макарун</button>
     </div>
     <div class="main__image">
       <img src="assets/images/main/main-macaroons.png" alt="Macaroons" class="main__image-size">
@@ -120,7 +123,10 @@
       <label>
         <input type="tel" class="input input__phone" placeholder="+375 (__) ___ - __ - __">
       </label>
-      <button class="btn order__btn" (click)="changeShowPresent()">Оформить заказ</button>
+      <button class="btn order__btn" addEffectsToButtons
+              [defaultBgColor]="'rgba(130, 19, 40, 0.5)'"
+              [hoverBgColor]="'rgb(130, 19, 40)'"
+              (click)="changeShowPresent()">Оформить заказ</button>
     </form>
     <img src="assets/images/order/strawberry_small.png" alt="Strawberry small" class="order__strawberry-small">
   </div>

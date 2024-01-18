@@ -8,6 +8,6 @@
       <div class="products__item-quantity">{{ product.quantity }} шт.</div>
       <div class="products__item-price">{{ product.price }} руб</div>
     </div>
-    <button class="btn products__btn" (click)="addProductToCart()">{{ product.order }}</button>
+    <button class="btn products__btn" addEffectsToButtons (click)="addProductToCart()">{{ product.order }}</button>
   </div>
 </div>
